@@ -13,8 +13,6 @@
   min-height: 100vh;
   position: fixed;
   justify-content: center;
-  /* padding: 120px 24px 160px 24px; */
-  pointer-events: none;
 }
 
 .main:before {
@@ -144,8 +142,15 @@
 }
 
 .dropdown {
-  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[210px] flex flex-col gap-2 justify-end items-end;
+  @apply absolute z-50 p-2 right-0 mt-2 w-48 bg-white space-y-2 rounded-md border shadow-md transition ease-out duration-300;
+  opacity: 0;
+  transform: translateY(-10px);
 }
+
+.dropdown-open {
+  @apply opacity-100 transform-none;
+}
+
 
 .dropdown_link {
   @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium;
