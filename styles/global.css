@@ -12,7 +12,6 @@
   width: 100vw;
   min-height: 100vh;
   position: fixed;
-  display: flex;
   justify-content: center;
   /* padding: 120px 24px 160px 24px; */
   pointer-events: none;
@@ -86,7 +85,7 @@
 }
 
 .style_badge {
-  @apply border-2 border-black text-black rounded-full px-1.5 py-1 inline-block;
+  @apply border-2 border-black shadow-xl text-black rounded-full px-1.5 py-1 inline-block;
 }
 
 .head_text {
@@ -141,7 +140,7 @@
 
 /* Nav Component */
 .logo_text {
-  @apply max-sm:hidden font-satoshi font-semibold text-lg text-black tracking-wide;
+  @apply max-sm:hidden font-satoshi font-semibold text-xl tracking-wide;
 }
 
 .dropdown {

@@ -3,7 +3,8 @@ import '@/styles/global.css';
 
 export const metadata = {
     title: "Promptly",
-    description: "Discover and Share AI Prompts"
+    description: "Discover and Share AI Prompts",
+    icons: [{ rel: "icon", url: "/assets/images/logo.png" }],
 }
 function RootLayout( {children}) {
   return (

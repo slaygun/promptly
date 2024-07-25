@@ -2,9 +2,9 @@ import { Feed } from "@/components/Feed"
 
 function Home() {
   return (
-    <section className="w-full flex-center flex-col px-4">
+    <section className="w-full flex-center flex-col px-6">
       <div className="relative mb-12">
-        <h1 className="p-4 head_text text-center">Discover and Share
+        <h1 className="head_text text-center">Discover and Share
           <br className="max-md:hidden"/>
           <span className="purple_gradient"> AI-Powered Prompts </span>
         </h1>
