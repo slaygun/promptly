@@ -142,15 +142,8 @@
 }
 
 .dropdown {
-  @apply absolute z-50 p-2 right-0 mt-2 w-48 bg-white space-y-2 rounded-md border shadow-md transition ease-out duration-300;
-  opacity: 0;
-  transform: translateY(-10px);
+  @apply absolute z-50 right-0 top-full mt-3 w-full p-5 rounded-lg border shadow-md bg-white min-w-[210px] space-y-2;
 }
-
-.dropdown-open {
-  @apply opacity-100 transform-none;
-}
-
 
 .dropdown_link {
   @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium;
