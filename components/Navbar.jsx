@@ -12,6 +12,7 @@ export const Navbar = () => {
 
   const [ isToggleOn, setToggleOn ] = useState(false);
   const handleToggle = () => {
+    console.log("click")
     setToggleOn(prev => !prev);
   }
 
@@ -71,33 +72,17 @@ export const Navbar = () => {
         { isUserLogged ? (
                 <>
                     <Menu className='w-8 h-8 p-1 border-2 rounded-lg' onClick={handleToggle}/>
-                    {/* { handleToggle===true ? {} : {}} */}
-                </>
-            ): (
-                <>
-                    {providers && Object.values(providers).map((provider) => (
-                        <button 
-                            type="button"
-                            key={provider.name}
-                            onClick={() => signIn(provider.id)}
-                            className='w-full black_btn'
-                        >
-                            Sign In
-                        </button>
-                    ) 
-                ) }
-                </>
-            )} 
-            
-            { isUserLogged ? (
-                <>
-                    <Link href='/profile' className='flex flex-center'>
-                        <UserCircleIcon className='w-8 h-8 mr-2'/> Profile
-                    </Link>
-                    <Link href='/create-post' className='black_btn'> Create Post </Link>
-                    <button type='button' onClick={signOut} className='w-full outline_btn'>
-                        Sign Out
-                    </button>
+                    { isToggleOn && (
+                        <div className='dropdown'>
+                            <Link href='/profile' className='flex flex-center'>
+                                <UserCircleIcon className='w-8 h-8 mr-2'/> Profile
+                            </Link>
+                            <Link href='/create-post' className='black_btn'> Create Post </Link>
+                            <button type='button' onClick={signOut} className='w-full outline_btn'>
+                                Sign Out
+                            </button>                           
+                        </div>
+                    )}
                 </>
             ): (
                 <>
