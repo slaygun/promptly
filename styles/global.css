@@ -4,6 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 
+  Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
+*/
 
 .main {
   width: 100vw;
@@ -71,7 +74,7 @@
 /* Tailwind Styles */
 
 .app {
-  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+  @apply relative z-10 flex items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
 }
 
 .black_btn {
@@ -82,12 +85,16 @@
   @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
 }
 
-.head_text {
-  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
+.style_badge {
+  @apply border-2 border-black text-black rounded-full px-1.5 py-1 inline-block;
 }
 
-.orange_gradient {
-  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+.head_text {
+  @apply text-4xl font-extrabold leading-[1.15] text-black sm:text-6xl;
+}
+
+.purple_gradient {
+  @apply bg-gradient-to-r from-pink-500 via-violet-600 to-purple-500 bg-clip-text text-transparent;
 }
 
 .green_gradient {
@@ -99,7 +106,7 @@
 }
 
 .desc {
-  @apply mt-5 text-lg text-gray-600 sm:text-xl max-w-2xl;
+  @apply text-lg text-gray-600 sm:text-xl max-w-2xl;
 }
 
 .search_input {
