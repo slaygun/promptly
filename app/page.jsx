@@ -1,7 +1,9 @@
+import { Feed } from "@/components/Feed"
+
 function Home() {
   return (
     <section className="w-full flex-center flex-col px-4">
-      <div className="relative">
+      <div className="relative mb-12">
         <h1 className="p-4 head_text text-center">Discover and Share
           <br className="max-md:hidden"/>
           <span className="purple_gradient"> AI-Powered Prompts </span>
@@ -19,6 +21,8 @@ function Home() {
         <span className="purple_gradient text-4xl md:text-6xl absolute -left-10 -top-8">✨</span>
           <span className="purple_gradient text-4xl md:text-6xl absolute -right-12 -bottom-8">✨</span>
       </div>
+
+      <Feed/>
     </section>
   )
 }

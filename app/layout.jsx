@@ -1,3 +1,4 @@
+import { Navbar } from '@/components/Navbar';
 import '@/styles/global.css';
 
 export const metadata = {
@@ -11,6 +12,7 @@ function RootLayout( {children}) {
         <div className='main'>
               <div className='gradient'/>
               <main className='app'>
+                <Navbar/>
                   {children}
               </main>
           </div>
