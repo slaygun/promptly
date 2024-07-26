@@ -7,18 +7,19 @@ export const metadata = {
     description: "Discover and Share AI Prompts",
     icons: [{ rel: "icon", url: "/assets/images/logo.png" }],
 }
-function RootLayout( {children}) {
+function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
         <Provider>
           <div className='main'>
             <div className='gradient'/>
-              <main className='app'>
-                  <Navbar/>
-                  {children}
-              </main>
           </div>
+
+          <main className='app'>
+              <Navbar/>
+              {children}
+          </main>
         </Provider>
       </body>
     </html>
