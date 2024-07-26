@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export const Form = () => {
-  return (
-    <div>Form</div>
-  )
-}
+  return <div>Form</div>;
+};
