@@ -46,7 +46,7 @@ export const Navbar = () => {
                     Sign Out
                 </button>
                 <Link href='/profile'>
-                    <UserCircleIcon className='w-8 h-8'/>
+                    <UserCircleIcon className='w-8 h-8 hover:text-gray-400 transition-all'/>
                 </Link>
                 </>
             ): (
@@ -75,7 +75,7 @@ export const Navbar = () => {
                     { isToggleOn && (
                         <div className='dropdown'>
                             <Link href='/profile' className='flex flex-center'>
-                                <UserCircleIcon className='w-8 h-8 mr-2'/> Profile
+                                <UserCircleIcon className='w-8 h-8 mr-2 hover:text-gray-400 transition-all'/> Profile
                             </Link>
                             <Link href='/create-post' className='black_btn'> Create Post </Link>
                             <button type='button' onClick={signOut} className='w-full outline_btn'>
