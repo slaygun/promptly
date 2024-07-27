@@ -8,9 +8,10 @@ import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 import { Menu, UserCircleIcon } from 'lucide-react'
 
 export const Navbar = () => {
-  const { data: session } = useSession();
+  const session = useSession();
 
   const [isToggleOn, setToggleOn] = useState(false);
+
   const handleToggle = () => {
     console.log("click")
     setToggleOn(prev => !prev);
@@ -23,8 +24,6 @@ export const Navbar = () => {
       setProviders(res);
     })();
   }, []);
-
-//   console.log("Session:", session);
 
   return (
     <nav className='flex-between w-full mb-16 pt-4'>
@@ -40,7 +39,7 @@ export const Navbar = () => {
       </Link>
 
       <div className='sm:flex gap-4 hidden'>
-        {session?.user ? (
+        {session.status == "authenticated" ? (
           <>
             <Link href='/create-post' className='black_btn'> Create Post </Link>
             <button type='button' onClick={signOut} className='outline_btn'>
@@ -70,7 +69,7 @@ export const Navbar = () => {
       {/* Mobile Nav */}
       <div className='sm:hidden relative space-y-2'>
 
-        {session?.user ? (
+        {session.status == "authenticated" ? (
           <>
             <Menu className='w-8 h-8 p-1 border-2 rounded-lg  cursor-pointer' onClick={handleToggle} />
             {isToggleOn && (
