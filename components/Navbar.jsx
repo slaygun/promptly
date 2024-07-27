@@ -38,7 +38,7 @@ export const Navbar = () => {
         <p className='text-2xl font-bold' >Promptly</p>
       </Link>
 
-      <div className='sm:flex gap-4 hidden'>
+      <div className='sm:flex sm:flex-center gap-4 hidden'>
         {session?.user ? (
           <>
             <Link href='/create-post' className='black_btn'> Create Post </Link>
@@ -46,7 +46,13 @@ export const Navbar = () => {
               Sign Out
             </button>
             <Link href='/profile'>
-              <UserCircleIcon className='w-8 h-8 hover:text-gray-400 transition-all' />
+              <Image
+                src={session?.user.image}
+                width={40}
+                height={40}
+                className='rounded-full border-2 border-black hover:border-4 hover:border-gray-500 transition-all'
+                alt='profile'
+              />
             </Link>
           </>
         ) : (
@@ -75,7 +81,13 @@ export const Navbar = () => {
             {isToggleOn && (
               <div className='dropdown'>
                 <Link href='/profile' className='flex flex-center'>
-                  <UserCircleIcon className='w-8 h-8 mr-2 hover:text-gray-400 transition-all' /> Profile
+                  <Image
+                    src={session?.user.image}
+                    width={40}
+                    height={40}
+                    className='rounded-full border-2 border-black hover:border-4 hover:border-gray-500 transition-all mr-2'
+                    alt='profile'
+                  /> Profile
                 </Link>
                 <Link href='/create-post' className='black_btn'> Create Post </Link>
                 <button type='button' onClick={signOut} className='w-full outline_btn'>
