@@ -82,6 +82,21 @@
   @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-gray-400  text-center text-sm font-inter flex items-center justify-center;
 }
 
+.metallic-button {
+  @apply border-2 border-black shadow-xl text-white rounded-full px-2 py-1 inline-block;
+  background: linear-gradient(
+    45deg,
+    #111 5%,
+    #444 10%,
+    #333 30%,
+    #555 50%,
+    #333 70%,
+    #444 80%,
+    #111 95%
+  );
+  text-shadow: 1px 1px 2px rgba(0.5, 0.5, 0.5, 255);
+}
+
 .style_badge {
   @apply border-2 border-black shadow-xl text-black rounded-full px-1.5 py-1 inline-block;
 }

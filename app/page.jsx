@@ -10,11 +10,11 @@ function Home() {
         </h1>
         <p className="desc text-center">
           Promptly is a platform that lets you&nbsp;
-          <span className="style_badge bg-pink-500 rotate-2"> discover </span>
+          <span className="metallic-button rotate-2 hover:rotate-0 transition-all "> discover </span>
           &nbsp;,&nbsp; 
-          <span className="style_badge bg-sky-500 -rotate-2"> create </span>
+          <span className="metallic-button -rotate-2"> create </span>
           &nbsp;and&nbsp; 
-          <span className="style_badge bg-yellow-500 rotate-2"> share </span>
+          <span className="metallic-button rotate-2"> share </span>
           &nbsp;creative prompts,
           fueling inspiration and connecting a vibrant community of creatives worldwide.
         </p>
