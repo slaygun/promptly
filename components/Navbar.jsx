@@ -1,31 +1,46 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
-import { Menu, UserCircleIcon } from 'lucide-react'
+import { Menu } from 'lucide-react'
 
 export const Navbar = () => {
   const { data: session } = useSession();
 
   const [isToggleOn, setToggleOn] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false); // State to track scroll position
+  
+  const [providers, setProviders] = useState(null);
 
   const handleToggle = () => {
     setToggleOn(prev => !prev);
   }
 
-  const [providers, setProviders] = useState(null);
   useEffect(() => {
     (async () => {
       const res = await getProviders();
       setProviders(res);
     })();
+
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    }
   }, []);
 
   return (
-    <nav className='flex-between w-full mb-16 pt-4'>
+    <nav className={`z-50 sticky top-0 flex-between w-full mb-16 py-4 px-4 sm:px-12 ${isScrolled ? 'bg-white border-b shadow-md' : 'bg-transparent'}`}>
       <Link href="/" className='flex flex-center gap-2'>
         <Image
           src="/assets/images/logo.png"
@@ -73,10 +88,9 @@ export const Navbar = () => {
 
       {/* Mobile Nav */}
       <div className='sm:hidden relative space-y-2'>
-
         {session?.user ? (
           <>
-            <Menu className='w-8 h-8 p-1 border-2 rounded-lg  cursor-pointer' onClick={handleToggle} />
+            <Menu className='w-8 h-8 p-1 border-2 rounded-lg cursor-pointer' onClick={handleToggle} />
             {isToggleOn && (
               <div className='dropdown'>
                 <Link href='/profile' className='flex flex-center' onClick={handleToggle}>
@@ -110,7 +124,6 @@ export const Navbar = () => {
             )}
           </>
         )}
-
       </div>
     </nav>
   )
