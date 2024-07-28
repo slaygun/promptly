@@ -10,7 +10,7 @@ function Home() {
         </h1>
         <p className="desc text-center">
           Promptly is a platform that lets you&nbsp;
-          <span className="metallic-button rotate-2 hover:rotate-0 transition-all "> discover </span>
+          <span className="metallic-button rotate-2"> discover </span>
           &nbsp;,&nbsp; 
           <span className="metallic-button -rotate-2"> create </span>
           &nbsp;and&nbsp; 
