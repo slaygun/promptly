@@ -2,7 +2,6 @@
 
 import React, { Suspense, useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import Spinner from '@/components/Spinner';
 import Form from '@/components/Form';
 
 function EditPrompt() {
