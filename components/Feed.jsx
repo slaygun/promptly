@@ -18,7 +18,7 @@ const PromptCardList = ({data, handleTagClick}) => {
 
 export const Feed = () => {
 
-  const [SearchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState('');
   const [posts, setPosts] = useState([]);
 
   const handleSearchChange = (e) => {
@@ -40,7 +40,7 @@ export const Feed = () => {
         <input
           type='text'
           placeholder='Search for a tag or a username'
-          value={SearchText}
+          value={searchText}
           onChange={handleSearchChange}
           required
           className='search_input peer'
