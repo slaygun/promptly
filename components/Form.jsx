@@ -39,14 +39,14 @@ export const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           <span className='font-satoshi font-semibold text-base text-gray-700'>
             Tag&nbsp;
             <span className='font-normal'>
-              (#product, #web-development, #idea)
+              (product, web-development, idea etc.)
             </span>
           </span>
 
           <input
             value={post.tag}
             onChange={(e) => setPost({ ...post, tag: e.target.value })}
-            placeholder='#tag'
+            placeholder='tag'
             required
             className='form_input'
           />
