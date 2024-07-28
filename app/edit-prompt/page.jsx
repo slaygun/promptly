@@ -69,15 +69,13 @@ function EditPrompt() {
   };
 
   return (
-    <Suspense fallback={<Spinner />}>
-      <Form
-        type="Edit"
-        post={post}
-        setPost={setPost}
-        submitting={submitting}
-        handleSubmit={editPrompt}
-      />
-    </Suspense>
+    <Form
+      type="Edit"
+      post={post}
+      setPost={setPost}
+      submitting={submitting}
+      handleSubmit={editPrompt}
+    />
   );
 }
 
