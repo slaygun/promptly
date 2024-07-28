@@ -5,7 +5,35 @@ import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
 export default function page() {
+    const { data : session } = useSession();
+
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+          const response = await fetch(`/api/users/${session?.user.id}/posts`);
+          const data = await response.json();
+          setPosts(data);
+        }
+
+        if(session?.user.id) fetchPosts();
+    },[])
+
+    const handleEdit = () => {
+
+    }
+
+    const handleDelete = async () => {
+
+    }
+
   return (
-    <div>page</div>
+    <Profile
+        name="My"
+        desc={`Welcome, ${session?.user?.name}`}
+        data={posts}
+        handleEdit={handleEdit}
+        handleDelete={handleDelete}
+    />
   )
 }
