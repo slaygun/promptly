@@ -41,7 +41,7 @@ export const Navbar = () => {
 
   return (
     <nav className={`z-50 sticky top-0 flex-between w-full mb-16 py-4 px-4 sm:px-12 ${isScrolled ? 'bg-white border-b shadow-md' : 'bg-transparent'}`}>
-      <Link href="/" className='flex flex-center gap-2'>
+      <Link href="/" onClick={isToggleOn? handleToggle : undefined} className='flex flex-center gap-2'>
         <Image
           src="/assets/images/logo.png"
           alt="Promptly Logo"
