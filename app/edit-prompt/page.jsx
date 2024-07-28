@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
 import React, { Suspense, useState, useEffect } from 'react';
-import { Form } from '@/components/Form';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Spinner from '@/components/Spinner';
+import Form from '@/components/Form';
 
 function EditPrompt() {
   const router = useRouter();
@@ -69,7 +69,7 @@ function EditPrompt() {
   };
 
   return (
-    <Suspense fallback={<Spinner/>}>
+    <Suspense fallback={<Spinner />}>
       <Form
         type="Edit"
         post={post}
