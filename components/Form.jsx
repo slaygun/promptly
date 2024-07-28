@@ -59,7 +59,7 @@ export const Form = ({ type, post, setPost, submitting,
                 disabled={submitting}
                 className='px-1.5 py-1 rounded-lg text-white text-base bg-green-500 hover:bg-green-600 transition-all'
               >
-                {submitting ? `${type}...` : type}
+                {submitting ? `${type}ing...` : type}
               </button>
             </div>
           </label>

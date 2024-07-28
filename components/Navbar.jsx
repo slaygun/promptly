@@ -13,7 +13,6 @@ export const Navbar = () => {
   const [isToggleOn, setToggleOn] = useState(false);
 
   const handleToggle = () => {
-    console.log("click")
     setToggleOn(prev => !prev);
   }
 
@@ -80,7 +79,7 @@ export const Navbar = () => {
             <Menu className='w-8 h-8 p-1 border-2 rounded-lg  cursor-pointer' onClick={handleToggle} />
             {isToggleOn && (
               <div className='dropdown'>
-                <Link href='/profile' className='flex flex-center'>
+                <Link href='/profile' className='flex flex-center' onClick={handleToggle}>
                   <Image
                     src={session?.user.image}
                     width={40}
@@ -89,7 +88,7 @@ export const Navbar = () => {
                     alt='profile'
                   /> Profile
                 </Link>
-                <Link href='/create-post' className='black_btn'> Create Post </Link>
+                <Link href='/create-post' className='black_btn' onClick={handleToggle}> Create Post </Link>
                 <button type='button' onClick={signOut} className='w-full outline_btn'>
                   Sign Out
                 </button>

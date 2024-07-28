@@ -21,7 +21,7 @@ function CreatePrompt() {
     try {
       const response = await fetch('/api/prompt/new',
       {
-        method: POST,
+        method: 'POST',
         body: JSON.stringify({
           prompt: post.prompt,
           userId: session?.user.id,
@@ -30,7 +30,7 @@ function CreatePrompt() {
       })
 
       if (response.ok){
-        Router.push('/');
+        router.push('/');
       }
     } catch (error) {
       console.log(error)
@@ -47,7 +47,7 @@ function CreatePrompt() {
       submitting={submitting}
       handleSubmit={createPrompt}
     />
-  )
-}
+  );
+};
 
 export default CreatePrompt
