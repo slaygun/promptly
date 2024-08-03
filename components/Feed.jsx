@@ -20,9 +20,28 @@ export const Feed = () => {
 
   const [searchText, setSearchText] = useState('');
   const [posts, setPosts] = useState([]);
+  const [searchedResults, setsearchedResults] = useState([])
+
+  const filterPrompts = (searchText) => {
+    const regex = new RegExp(searchText, "i"); // 'i' 
+    return posts.filter(
+      (item) =>
+        regex.test(item.creator.username) ||
+        regex.test(item.tag) ||
+        regex.test(item.prompt)
+    );
+  };
 
   const handleSearchChange = (e) => {
+    setSearchText(e.target.value)
+    const results =  filterPrompts(e.target.value)
+    setsearchedResults(results)
+  }
 
+  const handleTagClick = (tagName) => {
+    setSearchText(tagName)
+    const results =  filterPrompts(tagName)
+    setsearchedResults(results)
   }
 
   useEffect(() => {
@@ -39,7 +58,7 @@ export const Feed = () => {
       <form className='relative w-full flex-center'>
         <input
           type='text'
-          placeholder='Search for a tag or a username'
+          placeholder='Search by a Prompt, Tag or Username'
           value={searchText}
           onChange={handleSearchChange}
           required
@@ -47,11 +66,20 @@ export const Feed = () => {
         />
 
       </form>
+      
+      { searchText ? (
+        <PromptCardList
+          data={searchedResults}
+          handleTagClick={handleTagClick}
+        /> 
+      )
+      : (
+        <PromptCardList
+          data={posts}
+          handleTagClick={handleTagClick}
+        />
+    )}
 
-      <PromptCardList
-        data={posts}
-        handleTagClick={() => {}}
-      />
     </section>
   )
 }
